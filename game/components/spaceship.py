@@ -14,15 +14,15 @@ class Spaceship(Sprite):
 
     def update(self, user_input):
         if user_input[pygame.K_LEFT]:
-            if self.rect.left > -59:
+            if self.rect.left >= -70:
                 self.rect.x -= 10
-                if self.rect.left == -60:
+                if self.rect.left <= 0:
                     self.rect.left = 1100
 
         if user_input[pygame.K_RIGHT]:
-            if self.rect.right < SCREEN_WIDTH + 59:
+            if self.rect.right < SCREEN_WIDTH + 70:
                 self.rect.x += 10
-                if self.rect.right > SCREEN_WIDTH:
+                if self.rect.right >= SCREEN_WIDTH:
                     self.rect.right = 0
 
         if user_input[pygame.K_UP]:
